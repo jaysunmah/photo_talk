@@ -1,9 +1,7 @@
-Router.configure({
-  layoutTemplate: 'main'
-});
-
 Router.route('/', function() {
-  this.render('landing');
+  this.render('main');
+}, {
+	layoutTemplate: 'main';
 });
 
 
