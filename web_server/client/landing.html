@@ -1,6 +1,6 @@
 <template name="landing">
   <div class="ui middle aligned container centeredParent">
-    <div class="centeredChild">
+    <div class="transition hidden centeredChild" id="landingContents">
       <div class="ui center aligned grid">
         <div class="row">
           <h1>Hi, welcome to PhotoTalk.</h1>
@@ -11,14 +11,15 @@
           </div>
         </div>
         <div class="row">
-          <div class="ui button" id="joinGame">Join Game</div>
+          <div class="ui button" id="joinGame">Join Existing Lobby</div>
           <div class="ui button" id="createGame">Create Lobby</div>
         </div>
         <div class="row">
           {{#if joiningGame}}
-            <div class="ui input">
-              <input type="text" placeholder="Lobby ID">
-            </div>
+			<div class="ui action input" id="lobbyInputContainer">
+			  <input type="text" placeholder="Lobby ID" id="lobbyInput">
+			  <button class="ui button" id="joinLobby">Go</button>
+			</div>
           {{/if}}
         </div>
       </div>

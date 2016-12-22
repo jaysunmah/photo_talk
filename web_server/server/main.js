@@ -1,24 +1,32 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  Meteor.publish("games", function (lobbyID) {
+  	console.log(lobbyID);
+    return Meteor.Games.find({lobbyID: lobbyID});
+  });
 });
 
 Meteor.methods({
-    'initRobot': function(x, y, th) {
-      var options = {
-				data: {
-        	'x': x,
-        	'y': y,
-					'th': th,
-				}
-      }
-			console.log('Initializing robot at ', options);
-			//HTTP.post('http://127.0.0.1:5000/init', options)
+    'makeLobby': function(lobbyID, host) {
+		Meteor.Games.insert({
+			lobbyID: lobbyID,
+			host: host,
+			players: [host + " (host)"],
+			started_game: false,
+			finished_game: false,
+		});
     },
-		'getPose': function() {
-			this.unblock();
-			return HTTP.get('http://127.0.0.1:5000/location');
+	'joinLobby': function(lobbyID, player) {
+		this.unblock();
+		var lobby = Meteor.Games.findOne({lobbyID: lobbyID});
+		if (lobby) {
+			var currentPlayers = lobby.players;
+			currentPlayers.push(player);
+			Meteor.Games.update({lobbyID: lobbyID}, {$set: {players: currentPlayers}});
+			return true;
 		}
+		return false;
+	}
 });
 

@@ -1,0 +1,24 @@
+<template name="lobby">
+  <div class="ui transition hidden container" id="lobbyContainer">
+    <div class="ui large hidden divider"></div>
+    <div class="ui stackable grid">
+      <div class="four wide column">
+        <div class="ui segment">
+			<h3>Players:</h3>
+			{{#each gameData.players}}
+				<p>{{this}}</p>
+			{{/each}}
+        </div>
+      </div>
+      <div class="twelve wide column">
+        <div class="ui segment">
+          <h2>Game settings:</h2>
+          <p>Host: {{gameData.host}}</p>
+          <p>Number of rounds: </p>
+          <p>Time per round: </p>
+          <div class="ui primary button"> Start Game!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

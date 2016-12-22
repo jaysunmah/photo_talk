@@ -115,14 +115,16 @@ var sketch1 = function (s) {
     }
 };
 
-Template.landing.onRendered(function() {
-    Session.set('mouseSelect', 'no_select');
-    $('.ui.accordion').accordion();
-		$("#headingInput").mousemove(function () {
-			$("#headingVal").text($("#headingInput").val())
-      setRobotInitPos.th = parseInt($('#headingInput').val());
-      Session.set('initPosCoords', setRobotInitPos);
-		});
-
-    //new p5(sketch1, "sketch1");
-})
+/*
+ *Template.landing1.onRendered(function() {
+ *    Session.set('mouseSelect', 'no_select');
+ *    $('.ui.accordion').accordion();
+ *        $("#headingInput").mousemove(function () {
+ *            $("#headingVal").text($("#headingInput").val())
+ *      setRobotInitPos.th = parseInt($('#headingInput').val());
+ *      Session.set('initPosCoords', setRobotInitPos);
+ *        });
+ *
+ *    //new p5(sketch1, "sketch1");
+ *})
+ */
