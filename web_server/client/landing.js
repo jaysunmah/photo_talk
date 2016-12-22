@@ -1,11 +1,20 @@
 Template.landing.events({
-  'change #headingInput' (event) {
-    Session.set('initializedHeading', true);
+  'click #joinGame' (event) {
+    Session.set('joiningGame', true);
+  },
+  'click #createGame' (event) {
+	var username = $('#username').val();
+	if (username == '') {
+	  $('#username').transition('bounce', '1000ms');
+	  $('#usernameContainer').addClass('error');
+	} else {
+
+	}
   },
 });
 
 Template.landing.helpers({
-  runtimeStatus: function() {
-    return Session.get('runtimeStatus') || 'Welcome to Turtlebot!';
+  joiningGame: function() {
+    return Session.get('joiningGame');
   },
 });

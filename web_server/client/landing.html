@@ -1,3 +1,28 @@
 <template name="landing">
-  <div id="sketch1"></div>
+  <div class="ui middle aligned container centeredParent">
+    <div class="centeredChild">
+      <div class="ui center aligned grid">
+        <div class="row">
+          <h1>Hi, welcome to PhotoTalk.</h1>
+        </div>
+        <div class="row">
+          <div class="ui input" id="usernameContainer">
+            <input type="text" placeholder="What's your name?" id="username">
+          </div>
+        </div>
+        <div class="row">
+          <div class="ui button" id="joinGame">Join Game</div>
+          <div class="ui button" id="createGame">Create Lobby</div>
+        </div>
+        <div class="row">
+          {{#if joiningGame}}
+            <div class="ui input">
+              <input type="text" placeholder="Lobby ID">
+            </div>
+          {{/if}}
+        </div>
+      </div>
+      <div class="ui large hidden divider"></div>
+    </div>
+  </div>
 </template>

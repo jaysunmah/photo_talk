@@ -124,5 +124,5 @@ Template.landing.onRendered(function() {
       Session.set('initPosCoords', setRobotInitPos);
 		});
 
-    new p5(sketch1, "sketch1");
+    //new p5(sketch1, "sketch1");
 })
