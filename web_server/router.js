@@ -12,7 +12,9 @@ Router.route('/lobby/:lobbyID', function() {
 	  lobbyID: this.params.lobbyID
 	}
   });
-
 });
 
+Router.route('/sandbox', function() {
+  this.render('drawingPhase');
+});
 

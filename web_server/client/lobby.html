@@ -13,10 +13,20 @@
       <div class="twelve wide column">
         <div class="ui segment">
           <h2>Game settings:</h2>
+          <p>Lobby ID: {{lobbyID}} (share this with your friends who want to join your lobby)</p>
           <p>Host: {{gameData.host}}</p>
-          <p>Number of rounds: </p>
-          <p>Time per round: </p>
-          <div class="ui primary button"> Start Game!</div>
+		  <p style="display:inline-block; margin-right: 5px;">Time per round (seconds): </p>
+		  <div class="ui dropdown" style="display: inline-block;">
+			<div class="text" id="timeRounds">30</div>
+			<i class="dropdown icon"></i>
+			<div class="menu">
+			  <div class="item">15</div>
+			  <div class="item">30</div>
+			  <div class="item">45</div>
+			</div>
+		  </div>
+		  <br>
+          <div class="ui primary button" id="startGame"> Start Game!</div>
         </div>
       </div>
     </div>

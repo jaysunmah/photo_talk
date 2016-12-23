@@ -1,0 +1,30 @@
+<template name="drawingPhase">
+  <div class="ui center aligned container">
+	<div class="ui large hidden divider"></div>
+	<h1>Hello!</h1>
+	<div style="position: relative; height: 500px;">
+	  <div id="signature-pad" class="m-signature-pad">
+		<div class="m-signature-pad--body">
+		  <canvas></canvas>
+		</div>
+		<div class="m-signature-pad--footer">
+		<div class="description">Draw your thing!</div>
+		</div>
+	  </div>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui stackable grid" style="max-width: 700px; margin: auto;">
+	  <div class="five wide center aligned column">
+	  	<div class="ui black fluid button" id="clearCanvas">Clear</div>
+	  </div>
+	  <div class="six wide center aligned column">
+	  	<div class="ui {{erase}} button" id="eraseCanvas">Erase</div>
+	  	<div class="ui button" id="colorCanvas">Color</div>
+	  </div>
+	  <div class="five wide center aligned column">
+	  	<div class="ui primary fluid button" id="saveCanvas">Save</div>
+      </div>
+    </div>
+	<img id="wei" style="max-width: 700px; max-height: 500px;">
+  </div>
+</template>

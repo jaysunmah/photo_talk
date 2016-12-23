@@ -27,6 +27,25 @@ Meteor.methods({
 			return true;
 		}
 		return false;
-	}
+	},
+	'startGame': function(timeRounds, lobbyID) {
+		this.unblock();
+		var lobby = Meteor.Games.findOne({lobbyID: lobbyID});
+		if (lobby) {
+			var placeholders = [];
+			for (var i = 0; i < lobby.players.length; i++) {
+				placeholders.push(i);
+			}
+			var updates = {
+				timePerRound: timeRounds,
+				round: 0,
+				placeholders: placeholders,
+				started_game: true
+			}
+			Meteor.Games.update({lobbyID: lobbyID}, {$set: updates});
+			return true;
+		}
+		return false;
+	},
 });
 
